@@ -10,8 +10,9 @@
 #import "AddCharacterViewController.h"
 #import "CustomTableViewCell.h"
 
-@interface ViewController ()
+@interface ViewController () <UISearchBarDelegate>
 @property NSMutableArray *charactersArray;
+@property NSMutableArray *filteredCharactersArray;
 @property NSArray *characterImages;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSString *enteredCharacter;
@@ -19,6 +20,7 @@
 @property NSString *enteredHouse;
 @property NSString *enteredAge;
 @property NSString *enteredDragonMount;
+@property BOOL isFiltered;
 
 
 @end
@@ -27,6 +29,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    self.isFiltered = NO;
 
     self.characterImages = [NSArray arrayWithObjects:[UIImage imageNamed:@"daenerys.jpeg"],
                                                      [UIImage imageNamed:@"hodor.jpg"],
@@ -59,6 +63,16 @@
     }
 }
 
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
+    [super setEditing:editing animated:animated];
+    [self.tableView setEditing:editing animated:YES];
+    if (editing) {
+        //addButton.enabled = NO;
+    } else {
+        //addButton.enabled = YES;
+    }
+}
+
 - (void)loadData {
     NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"character" ascending:YES];
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Character"];
@@ -69,16 +83,57 @@
     [self.tableView reloadData];
 }
 
+#pragma mark - searchbar delegate
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [searchBar resignFirstResponder];
+}
+
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    if (searchText.length == 0) {
+        self.isFiltered = NO;
+    }
+    else {
+        self.isFiltered = YES;
+        [self filterContentForSearchText:searchText];
+    }
+
+    [self.tableView reloadData];
+}
+
+-(void)filterContentForSearchText:(NSString*)searchText{
+
+    [self.filteredCharactersArray removeAllObjects];
+
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.character contains[c] %@",searchText];
+    self.filteredCharactersArray = [NSMutableArray arrayWithArray:[self.charactersArray filteredArrayUsingPredicate:predicate]];
+}
+
 #pragma mark - table methods
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.charactersArray.count;
+    NSInteger rowCount;
+    if (self.isFiltered) {
+        rowCount = self.filteredCharactersArray.count;
+    }
+    else {
+        rowCount = self.charactersArray.count;
+    }
+    return rowCount;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    NSManagedObject *character = [self.charactersArray objectAtIndex:indexPath.row];
+    NSManagedObject *character;
+    if (self.isFiltered) {
+        character = [self.filteredCharactersArray objectAtIndex:indexPath.row];
+    }
+    else {
+        character = [self.charactersArray objectAtIndex:indexPath.row];
+    }
     cell.characterNameLabel.text = [character valueForKey:@"character"];
     cell.actorNameLabel.text = [character valueForKey:@"actor"];
     cell.houseNameLabel.text = [character valueForKey:@"house"];

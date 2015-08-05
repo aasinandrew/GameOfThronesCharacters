@@ -97,12 +97,12 @@
 			children = (
 				967D7C651B715E53001BAE77 /* AppDelegate.h */,
 				967D7C661B715E53001BAE77 /* AppDelegate.m */,
+				BB1CA2401B71B81A0034FB76 /* Model */,
 				967D7C931B716FBE001BAE77 /* View */,
 				967D7C8F1B71677A001BAE77 /* Controllers */,
 				967D7C6E1B715E53001BAE77 /* Main.storyboard */,
 				967D7C711B715E53001BAE77 /* Images.xcassets */,
 				967D7C731B715E53001BAE77 /* LaunchScreen.xib */,
-				967D7C681B715E53001BAE77 /* GameOfThronesCharacters.xcdatamodeld */,
 				967D7C611B715E53001BAE77 /* Supporting Files */,
 			);
 			path = GameOfThronesCharacters;
@@ -153,6 +153,14 @@
 				967D7C911B716FB3001BAE77 /* CustomTableViewCell.m */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		BB1CA2401B71B81A0034FB76 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				967D7C681B715E53001BAE77 /* GameOfThronesCharacters.xcdatamodeld */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
