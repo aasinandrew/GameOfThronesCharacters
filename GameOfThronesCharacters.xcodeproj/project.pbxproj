@@ -15,6 +15,10 @@
 		967D7C721B715E53001BAE77 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 967D7C711B715E53001BAE77 /* Images.xcassets */; };
 		967D7C751B715E53001BAE77 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 967D7C731B715E53001BAE77 /* LaunchScreen.xib */; };
 		967D7C811B715E53001BAE77 /* GameOfThronesCharactersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 967D7C801B715E53001BAE77 /* GameOfThronesCharactersTests.m */; };
+		967D7C8B1B715E85001BAE77 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967D7C8A1B715E85001BAE77 /* CoreData.framework */; };
+		967D7C8E1B716774001BAE77 /* AddCharacterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 967D7C8D1B716774001BAE77 /* AddCharacterViewController.m */; };
+		967D7C921B716FB3001BAE77 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 967D7C911B716FB3001BAE77 /* CustomTableViewCell.m */; };
+		967D7C951B717A43001BAE77 /* gameofthrones.plist in Resources */ = {isa = PBXBuildFile; fileRef = 967D7C941B717A43001BAE77 /* gameofthrones.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +46,12 @@
 		967D7C7A1B715E53001BAE77 /* GameOfThronesCharactersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameOfThronesCharactersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		967D7C7F1B715E53001BAE77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		967D7C801B715E53001BAE77 /* GameOfThronesCharactersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameOfThronesCharactersTests.m; sourceTree = "<group>"; };
+		967D7C8A1B715E85001BAE77 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		967D7C8C1B716774001BAE77 /* AddCharacterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCharacterViewController.h; sourceTree = "<group>"; };
+		967D7C8D1B716774001BAE77 /* AddCharacterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCharacterViewController.m; sourceTree = "<group>"; };
+		967D7C901B716FB3001BAE77 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
+		967D7C911B716FB3001BAE77 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
+		967D7C941B717A43001BAE77 /* gameofthrones.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = gameofthrones.plist; path = ../../../../../Downloads/gameofthrones.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				967D7C8B1B715E85001BAE77 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +76,8 @@
 		967D7C551B715E53001BAE77 = {
 			isa = PBXGroup;
 			children = (
+				967D7C941B717A43001BAE77 /* gameofthrones.plist */,
+				967D7C8A1B715E85001BAE77 /* CoreData.framework */,
 				967D7C601B715E53001BAE77 /* GameOfThronesCharacters */,
 				967D7C7D1B715E53001BAE77 /* GameOfThronesCharactersTests */,
 				967D7C5F1B715E53001BAE77 /* Products */,
@@ -85,8 +98,8 @@
 			children = (
 				967D7C651B715E53001BAE77 /* AppDelegate.h */,
 				967D7C661B715E53001BAE77 /* AppDelegate.m */,
-				967D7C6B1B715E53001BAE77 /* ViewController.h */,
-				967D7C6C1B715E53001BAE77 /* ViewController.m */,
+				967D7C931B716FBE001BAE77 /* View */,
+				967D7C8F1B71677A001BAE77 /* Controllers */,
 				967D7C6E1B715E53001BAE77 /* Main.storyboard */,
 				967D7C711B715E53001BAE77 /* Images.xcassets */,
 				967D7C731B715E53001BAE77 /* LaunchScreen.xib */,
@@ -120,6 +133,26 @@
 				967D7C7F1B715E53001BAE77 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		967D7C8F1B71677A001BAE77 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				967D7C6B1B715E53001BAE77 /* ViewController.h */,
+				967D7C6C1B715E53001BAE77 /* ViewController.m */,
+				967D7C8C1B716774001BAE77 /* AddCharacterViewController.h */,
+				967D7C8D1B716774001BAE77 /* AddCharacterViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		967D7C931B716FBE001BAE77 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				967D7C901B716FB3001BAE77 /* CustomTableViewCell.h */,
+				967D7C911B716FB3001BAE77 /* CustomTableViewCell.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +235,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				967D7C951B717A43001BAE77 /* gameofthrones.plist in Resources */,
 				967D7C701B715E53001BAE77 /* Main.storyboard in Resources */,
 				967D7C751B715E53001BAE77 /* LaunchScreen.xib in Resources */,
 				967D7C721B715E53001BAE77 /* Images.xcassets in Resources */,
@@ -224,6 +258,8 @@
 			files = (
 				967D7C6A1B715E53001BAE77 /* GameOfThronesCharacters.xcdatamodeld in Sources */,
 				967D7C671B715E53001BAE77 /* AppDelegate.m in Sources */,
+				967D7C921B716FB3001BAE77 /* CustomTableViewCell.m in Sources */,
+				967D7C8E1B716774001BAE77 /* AddCharacterViewController.m in Sources */,
 				967D7C6D1B715E53001BAE77 /* ViewController.m in Sources */,
 				967D7C641B715E53001BAE77 /* main.m in Sources */,
 			);
