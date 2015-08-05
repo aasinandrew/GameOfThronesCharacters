@@ -18,7 +18,7 @@
 		967D7C8B1B715E85001BAE77 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967D7C8A1B715E85001BAE77 /* CoreData.framework */; };
 		967D7C8E1B716774001BAE77 /* AddCharacterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 967D7C8D1B716774001BAE77 /* AddCharacterViewController.m */; };
 		967D7C921B716FB3001BAE77 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 967D7C911B716FB3001BAE77 /* CustomTableViewCell.m */; };
-		967D7C951B717A43001BAE77 /* gameofthrones.plist in Resources */ = {isa = PBXBuildFile; fileRef = 967D7C941B717A43001BAE77 /* gameofthrones.plist */; };
+		BB1CA23F1B71AA160034FB76 /* gameofthrones.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB1CA23E1B71AA160034FB76 /* gameofthrones.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +51,7 @@
 		967D7C8D1B716774001BAE77 /* AddCharacterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCharacterViewController.m; sourceTree = "<group>"; };
 		967D7C901B716FB3001BAE77 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
 		967D7C911B716FB3001BAE77 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
-		967D7C941B717A43001BAE77 /* gameofthrones.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = gameofthrones.plist; path = ../../../../../Downloads/gameofthrones.plist; sourceTree = "<group>"; };
+		BB1CA23E1B71AA160034FB76 /* gameofthrones.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = gameofthrones.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +76,6 @@
 		967D7C551B715E53001BAE77 = {
 			isa = PBXGroup;
 			children = (
-				967D7C941B717A43001BAE77 /* gameofthrones.plist */,
 				967D7C8A1B715E85001BAE77 /* CoreData.framework */,
 				967D7C601B715E53001BAE77 /* GameOfThronesCharacters */,
 				967D7C7D1B715E53001BAE77 /* GameOfThronesCharactersTests */,
@@ -112,6 +111,7 @@
 		967D7C611B715E53001BAE77 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BB1CA23E1B71AA160034FB76 /* gameofthrones.plist */,
 				967D7C621B715E53001BAE77 /* Info.plist */,
 				967D7C631B715E53001BAE77 /* main.m */,
 			);
@@ -235,9 +235,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				967D7C951B717A43001BAE77 /* gameofthrones.plist in Resources */,
 				967D7C701B715E53001BAE77 /* Main.storyboard in Resources */,
 				967D7C751B715E53001BAE77 /* LaunchScreen.xib in Resources */,
+				BB1CA23F1B71AA160034FB76 /* gameofthrones.plist in Resources */,
 				967D7C721B715E53001BAE77 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -458,6 +458,7 @@
 				967D7C861B715E53001BAE77 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		967D7C871B715E53001BAE77 /* Build configuration list for PBXNativeTarget "GameOfThronesCharactersTests" */ = {
 			isa = XCConfigurationList;
@@ -466,6 +467,7 @@
 				967D7C891B715E53001BAE77 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

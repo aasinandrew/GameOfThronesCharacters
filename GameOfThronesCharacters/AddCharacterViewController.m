@@ -8,7 +8,7 @@
 
 #import "AddCharacterViewController.h"
 
-@interface AddCharacterViewController ()
+@interface AddCharacterViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *characterTextField;
 @property (weak, nonatomic) IBOutlet UITextField *actorTextField;
 @property (weak, nonatomic) IBOutlet UITextField *houseTextField;
@@ -34,6 +34,10 @@
 
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return NO;
+}
 
 
 @end

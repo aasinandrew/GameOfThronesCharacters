@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14D136" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14E46" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Character" syncable="YES">
         <attribute name="actor" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="age" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="character" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="dragonData" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="dragonMount" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="gender" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="house" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="photoData" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Character" positionX="-63" positionY="-18" width="128" height="165"/>
+        <element name="Character" positionX="-63" positionY="-18" width="128" height="150"/>
     </elements>
 </model>

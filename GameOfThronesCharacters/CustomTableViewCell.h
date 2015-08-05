@@ -16,6 +16,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *houseNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *ageLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dragonMountLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *dragonImage;
 
 @end

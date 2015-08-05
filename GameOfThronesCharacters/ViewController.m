@@ -12,6 +12,7 @@
 
 @interface ViewController ()
 @property NSMutableArray *charactersArray;
+@property NSArray *characterImages;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSString *enteredCharacter;
 @property NSString *enteredActor;
@@ -20,16 +21,16 @@
 @property NSString *enteredDragonMount;
 
 
-
-
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self.firstArray writeToURL:[self pListUrl] atomically:YES];
-//    [self loadInitialCharactersList]
+
+    self.characterImages = [NSArray arrayWithObjects:[UIImage imageNamed:@"daenerys.jpeg"],
+                                                     [UIImage imageNamed:@"hodor.jpg"],
+                                                     [UIImage imageNamed:@"jon.jpeg"], nil];
 
     [self loadData];
 
@@ -51,17 +52,11 @@
         NSData *data = UIImageJPEGRepresentation(image, 1.0);
         [character setValue:data forKey:@"photoData"];
 
-        UIImage *dragonImage = [UIImage imageNamed:[dict objectForKey:@"dragonData"]];
-        NSData *dragonData = UIImageJPEGRepresentation(dragonImage, 1.0);
-        [character setValue:dragonData forKey:@"dragonData"];
-
     }
 
     [self.moc save:NULL];
-    }
     [self loadData];
-
-
+    }
 }
 
 - (void)loadData {
@@ -69,33 +64,10 @@
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Character"];
     request.sortDescriptors = @[sortDescriptor];
 
-
-  self.charactersArray = [NSMutableArray arrayWithArray: [self.moc executeFetchRequest:request error:NULL]];
+    self.charactersArray = [NSMutableArray arrayWithArray: [self.moc executeFetchRequest:request error:NULL]];
 
     [self.tableView reloadData];
 }
-
-
-//-(NSURL *)pListUrl {
-//    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask].firstObject URLByAppendingPathComponent:@"gameofthrones.plist"];
-//}
-
-
--(void)loadInitialCharactersList {
-
-    NSString *actorName = @"Aiden Gillen";
-    NSString *characterName = @"Petyr 'Little Finger' Baelish";
-
-    NSManagedObject *character = [NSEntityDescription insertNewObjectForEntityForName:@"Character" inManagedObjectContext:self.moc];
-
-    [character setValue:actorName forKey:@"actor"];
-    [character setValue:characterName forKey:@"character"];
-
-
-    [self.moc save:NULL];
-
-}
-
 
 #pragma mark - table methods
 
@@ -112,8 +84,7 @@
     cell.houseNameLabel.text = [character valueForKey:@"house"];
     cell.ageLabel.text = [character valueForKey:@"age"];
     cell.dragonMountLabel.text = [character valueForKey:@"dragonMount"];
-    cell.characterImage.image = [UIImage imageWithData:[character valueForKey:@"photoData"]];
-    cell.dragonImage.image = [UIImage imageWithData:[character valueForKey:@"dragonData"]];
+    cell.imageView.image = [UIImage imageWithData:[character valueForKey:@"photoData"]];
 
     return cell;
 }
@@ -121,7 +92,6 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     NSManagedObject *object = [self.charactersArray objectAtIndex:indexPath.row];
-//    [self.charactersArray removeObjectAtIndex:indexPath.row];
     [self.moc deleteObject:object];
     [self.moc save:NULL];
     [self loadData];
@@ -151,31 +121,16 @@
     [character setValue:self.enteredAge forKey:@"age"];
     [character setValue:self.enteredDragonMount forKey:@"dragonMount"];
 
+    int rand = arc4random_uniform((int)self.characterImages.count);
+
+    UIImage *image = [self.characterImages objectAtIndex:rand];
+    NSData *data = UIImageJPEGRepresentation(image, 1.0);
+
+    [character setValue:data forKey:@"photoData"];
+
     [self.moc save:NULL];
 
     [self loadData];
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @end

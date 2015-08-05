@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>actor</key>
+		<string>Peter Dinklage</string>
+		<key>character</key>
+		<string>Tyrion Lannister</string>
+		<key>house</key>
+		<string>House Lannister</string>
+		<key>age</key>
+		<string>35</string>
+		<key>dragonMount</key>
+		<string>Grey Wind</string>
+		<key>photoData</key>
+		<string>tyrion.jpg</string>
+	</dict>
+	<dict>
+		<key>actor</key>
+		<string>Maisie Williams</string>
+		<key>character</key>
+		<string>Arya Stark</string>
+		<key>house</key>
+		<string>House Stark</string>
+		<key>age</key>
+		<string>12</string>
+		<key>dragonMount</key>
+		<string>Nymeria</string>
+		<key>photoData</key>
+		<string>arya.jpg</string>
+	</dict>
+	<dict>
+		<key>actor</key>
+		<string>Aidan Gillen</string>
+		<key>character</key>
+		<string>Petyr “Little Finger” Baelish</string>
+		<key>house</key>
+		<string>House Baelish</string>
+		<key>age</key>
+		<string>40</string>
+		<key>dragonMount</key>
+		<string>Ghost</string>
+		<key>photoData</key>
+		<string>petyr.jpg</string>
+	</dict>
+</array>
+</plist>
